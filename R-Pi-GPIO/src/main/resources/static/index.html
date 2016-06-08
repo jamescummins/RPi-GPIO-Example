@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+.wrapper {
+   
+}
+
+button {
+    position: absolute;
+    
+    height: 50%;
+    width: 50%;
+}
+
+
+</style>
+<script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+function toggleLEDAjax() {
+	
+	$.ajax({
+		url: "\gpio",
+		sucCess:function(data){
+			$("#Toggle").text(data);
+		}
+	});
+}
+
+</script>
+</head>
+<body>
+<div class="wrapper">
+<button type="button" id="Toggle" onclick="toggleLEDAjax();">Toggle LED</button>
+</div>
+</body>
+</html>
